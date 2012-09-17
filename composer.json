@@ -1,0 +1,31 @@
+{
+    "name": "funddy/jsrouting-bundle",
+    "description": "JsRouting for Symfony2",
+    "keywords": ["js routing", "routing"],
+    "homepage": "https://github.com/funddy/jsrouting-bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Keyvan Akbary",
+            "email": "keyvan@funddy.com",
+            "homepage": "http://keyvanakbary.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.1.*",
+        "symfony/serializer": ">=2.0,<2.2-dev",
+        "mockery/mockery": "0.7.2"
+    },
+    "autoload": {
+        "psr-0": { "Funddy\\Bundle\\JsRoutingBundle": "" }
+    },
+    "target-dir": "Funddy/Bundle/JsRoutingBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

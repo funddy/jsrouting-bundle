@@ -1,0 +1,5 @@
+services:
+    funddy.jsrouting.controller.jsroutingcontroller:
+        class: Funddy\Bundle\JsRoutingBundle\Controller\JsRoutingController
+        arguments:
+            - @funddy.jsrouting.service.jsroutesexporter

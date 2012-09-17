@@ -1,0 +1,6 @@
+funddy_jsrouting:
+    pattern:   /js/funddyjsrouting.js
+    defaults:  { _controller: funddy.jsrouting.controller.jsroutingcontroller:exportAction }
+    requirements:
+        _method: GET
+        _format: js

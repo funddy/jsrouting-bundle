@@ -1,0 +1,33 @@
+services:
+    funddy.jsrouting.service.jsroutesexporter:
+        class: Funddy\Bundle\JsRoutingBundle\RoutesExporter\JsRoutesExporter
+        arguments:
+            - @funddy.jsrouting.service.configuredexposedroutesextractor
+            - @funddy.jsrouting.service.jsonserializer
+            - @templating
+
+    funddy.jsrouting.service.configuredexposedroutesextractor:
+        class: Funddy\Bundle\JsRoutingBundle\ExposedRoutesExtractor\ConfiguredExposedRoutesExtractor
+        public: false
+        arguments:
+            - @router
+            - @funddy.jsrouting.service.extractedroutefactory
+
+    funddy.jsrouting.service.extractedroutefactory:
+        class: Funddy\Bundle\JsRoutingBundle\ExtractedRoute\ExtractedRouteFactory
+        public: false
+
+    funddy.jsrouting.service.jsonserializer:
+        class: Symfony\Component\Serializer\Serializer
+        public: false
+        arguments:
+            - [@funddy.jsrouting.service.normalizer]
+            - [@funddy.jsrouting.service.jsonencoder]
+
+    funddy.jsrouting.service.normalizer:
+        class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
+        public: false
+
+    funddy.jsrouting.service.jsonencoder:
+        class: Symfony\Component\Serializer\Encoder\JsonEncoder
+        public: false

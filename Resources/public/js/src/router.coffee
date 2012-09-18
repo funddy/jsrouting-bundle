@@ -5,11 +5,10 @@ class root.FUNDDY.JsRouting.Router
   constructor: (@routesData, @bagFactory, @routeFactory, @baseUrl = "") ->
     processedRoutes = @bagFactory.createFromObject({})
 
-  generate: (routeName, parameters) ->
+  generate: (routeName, parameters = {}) ->
     routeData = @getAndcheckRouteDataExist(routeName)
 
-    if !processedRoutes.has(routeName)
-      processedRoutes.set(routeName, @createRouteFromData(routeName, routeData))
+    processedRoutes.set(routeName, @createRouteFromData(routeName, routeData)) unless processedRoutes.has(routeName)
 
     parameters = @bagFactory.createFromObject(parameters)
     @baseUrl + processedRoutes.get(routeName).process(parameters)

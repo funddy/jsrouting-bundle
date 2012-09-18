@@ -1,10 +1,10 @@
 {
     "name": "funddyjsrouting",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "node": "0.6.6"
     },
-    "dependencies":{
+    "dependencies": {
         "mocha": "latest",
         "sinon": "latest",
         "chai": "latest",

@@ -1,9 +1,12 @@
 @Router = (->
+  NOT_FOUND = -1
+  CONTROLLER_EXTENSION = ".php"
+
   getControllerName = ->
     pathName = window.location.pathname
-    index = pathName.indexOf ".php"
-    return "" if (index is -1)
-    return pathName.substr(0, index + 4)
+    index = pathName.indexOf CONTROLLER_EXTENSION
+    return "" if (index is NOT_FOUND)
+    return pathName.substr(0, index + CONTROLLER_EXTENSION.length)
 
   router = new FUNDDY.JsRouting.Router(
     FUNDDY.JsRouting.Routes,

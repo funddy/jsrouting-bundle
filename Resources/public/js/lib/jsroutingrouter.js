@@ -167,15 +167,17 @@
   })();
 
   this.Router = (function() {
-    var generate, getControllerName, router;
+    var CONTROLLER_EXTENSION, NOT_FOUND, generate, getControllerName, router;
+    NOT_FOUND = -1;
+    CONTROLLER_EXTENSION = ".php";
     getControllerName = function() {
       var index, pathName;
       pathName = window.location.pathname;
-      index = pathName.indexOf(".php");
-      if (index === -1) {
+      index = pathName.indexOf(CONTROLLER_EXTENSION);
+      if (index === NOT_FOUND) {
         return "";
       }
-      return pathName.substr(0, index + 4);
+      return pathName.substr(0, index + CONTROLLER_EXTENSION.length);
     };
     router = new FUNDDY.JsRouting.Router(FUNDDY.JsRouting.Routes, new FUNDDY.JsRouting.BagFactory(), new FUNDDY.JsRouting.RouteFactory(), getControllerName());
     generate = function(routeName, parameters) {

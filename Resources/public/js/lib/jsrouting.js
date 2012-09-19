@@ -138,6 +138,9 @@
 
     Router.prototype.generate = function(routeName, parameters) {
       var routeData;
+      if (parameters == null) {
+        parameters = {};
+      }
       routeData = this.getAndcheckRouteDataExist(routeName);
       if (!processedRoutes.has(routeName)) {
         processedRoutes.set(routeName, this.createRouteFromData(routeName, routeData));

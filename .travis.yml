@@ -9,14 +9,10 @@ node_js:
 before_script:
     - ROOT_DIR=`pwd`
     - NODE_ROOT_DIR=$ROOT_DIR/Resources/public/js
-    - sudo apt-get install php5-cli phpunit php-pear nodejs npm
-    - sudo pear channel-discover pear.phpunit.de
-    - sudo pear channel-discover components.ez.no
-    - sudo pear channel-discover pear.symfony-project.com
-    - sudo pear install --alldeps phpunit/PHPUnit
+    - sudo apt-get install php5-cli nodejs npm
     - curl -s http://getcomposer.org/installer | php
-    - php composer.phar install
+    - php composer.phar install --dev
     - cd $NODE_ROOT_DIR && npm install
     - cd $ROOT_DIR
 
-script: phpunit && cd $NODE_ROOT_DIR && make test
+script: bin/phpunit && cd $NODE_ROOT_DIR && make test

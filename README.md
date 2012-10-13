@@ -47,11 +47,11 @@ example:
     options:
         expose: true
 ```
-Now it's time to decide wether you want to use static, dynamic or mixed routes.
+Now it's time to decide whether you want to use static, dynamic or mixed routes.
 
 ### Dynamic Routes
-This is the most flexible option. Everytime you make a change in exposed routes you'll be able to access them from
-JavaScript. It's ideal for development environment or for those cases where you perfomance is not an issue. As
+This is the most flexible option. Every time you make a change in exposed routes you'll be able to access them from
+JavaScript. It's ideal for development environment or for those cases where you performance is not an issue. As
 everything in life, you have to pay a price, which is invoking an URL to regenerate all routes every time you make a
 request.
 
@@ -64,7 +64,7 @@ jsrouting:
 Include the scripts
 ```html
 <script type="text/javascript" src="{{ path('funddy_jsrouting') }}"></script>
-<script type="text/javascript" src="/bundles/jsrouting/js/jsroutingrouter.js"></script>
+<script type="text/javascript" src="{{ asset('bundles/funddyjsrouting/js/jsroutingrouter.js') }}"></script>
 ```
 
 ### Static Routes
@@ -79,7 +79,7 @@ Include routes in a single script
 ```html
 {% javascripts output='js/output.js'
     '/js/routes.js'
-    '/bundles/jsrouting/js/jsroutingrouter.js'
+    '/bundles/funddyjsrouting/js/jsroutingrouter.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
@@ -96,7 +96,7 @@ dynamic approach for development environment and static for production!
 
 {% javascripts output='js/output.js'
     '/js/routes.js'
-    '/bundles/jsrouting/js/jsroutingrouter.js'
+    '/bundles/funddyjsrouting/js/jsroutingrouter.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
@@ -117,7 +117,7 @@ What if you do not want to use the default "Router" global var and define your o
 and define your own router.
 ```html
 <script type="text/javascript" src="{{ path('funddy_jsrouting') }}"></script>
-<script type="text/javascript" src="/bundles/jsrouting/js/jsrouting.js"></script>
+<script type="text/javascript" src="{{ asset('bundles/funddyjsrouting/js/jsrouting.js') }}"></script>
 <script type="text/javascript">
     var MyOwnRouter = (function() {
         router = new FUNDDY.JsRouting.Router(
@@ -140,4 +140,3 @@ and define your own router.
 ```
 
   [FOSJsRoutingBundle]: https://github.com/FriendsOfSymfony/FOSJsRoutingBundle
-  [Composer]: http://getcomposer.org/

@@ -37,7 +37,6 @@ public function registerBundles()
 
 Usage
 -----
-
 Expose the routes that you want to have accessible from your JavaScript code adding the "expose" option to the routing
 entry
 ```yaml

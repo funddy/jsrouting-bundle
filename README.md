@@ -12,7 +12,7 @@ Add the following to your composer.json file:
 ```json
 {
     "require": {
-        "funddy/jsrouting-bundle": ">=1.0.*"
+        "funddy/jsrouting-bundle": "1.0.*"
     }
 }
 ```

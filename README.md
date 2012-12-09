@@ -63,7 +63,7 @@ jsrouting:
 Include the scripts
 ```html
 <script type="text/javascript" src="{{ path('funddy_jsrouting') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/funddyjsrouting/js/jsroutingrouter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/funddyjsrouting/js/lib/jsroutingrouter.js') }}"></script>
 ```
 
 ### Static Routes
@@ -116,7 +116,7 @@ What if you do not want to use the default "Router" global var and define your o
 and define your own router.
 ```html
 <script type="text/javascript" src="{{ path('funddy_jsrouting') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/funddyjsrouting/js/jsrouting.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/funddyjsrouting/js/lib/jsrouting.js') }}"></script>
 <script type="text/javascript">
     var MyOwnRouter = (function() {
         router = new FUNDDY.JsRouting.Router(

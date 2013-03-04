@@ -77,8 +77,8 @@ Compile the routes
 Include routes in a single script
 ```html
 {% javascripts output='js/output.js'
-    '/js/routes.js'
-    '/bundles/funddyjsrouting/js/jsroutingrouter.js'
+    'js/routes.js'
+    'bundles/funddyjsrouting/js/lib/jsroutingrouter.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
@@ -94,8 +94,8 @@ dynamic approach for development environment and static for production!
 {% endif %}
 
 {% javascripts output='js/output.js'
-    '/js/routes.js'
-    '/bundles/funddyjsrouting/js/jsroutingrouter.js'
+    'js/routes.js'
+    'bundles/funddyjsrouting/js/lib/jsroutingrouter.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
